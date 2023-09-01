@@ -28,6 +28,8 @@ public class CountryCodePickerViewController: UITableViewController {
 
     var hasCurrent = true
     var hasCommon = true
+    
+    var font: UIFont?
 
     lazy var allCountries = phoneNumberKit
         .allCountries()
@@ -146,8 +148,8 @@ public class CountryCodePickerViewController: UITableViewController {
         cell.textLabel?.text = country.prefix + " " + country.flag
         cell.detailTextLabel?.text = country.name
 
-        cell.textLabel?.font = .preferredFont(forTextStyle: .callout)
-        cell.detailTextLabel?.font = .preferredFont(forTextStyle: .body)
+        cell.textLabel?.font = font ?? .preferredFont(forTextStyle: .callout)
+        cell.detailTextLabel?.font = font ?? .preferredFont(forTextStyle: .body)
 
         return cell
     }

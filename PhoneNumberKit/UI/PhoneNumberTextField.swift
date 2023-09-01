@@ -369,6 +369,7 @@ open class PhoneNumberTextField: UITextField, UITextFieldDelegate {
         guard withDefaultPickerUI else { return }
         let vc = CountryCodePickerViewController(phoneNumberKit: phoneNumberKit)
         vc.delegate = self
+        vc.font = self.font
         if let nav = containingViewController?.navigationController, !PhoneNumberKit.CountryCodePicker.forceModalPresentation {
             nav.pushViewController(vc, animated: true)
         } else {

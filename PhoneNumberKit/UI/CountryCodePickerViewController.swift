@@ -153,7 +153,7 @@ public class CountryCodePickerViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.reuseIdentifier, for: indexPath)
         let country = self.country(for: indexPath)
 
-        cell.textLabel?.text = "\(country.flag) \(country.name) (\(country.prefix))"
+        cell.textLabel?.text = "\(country.flag)   \(country.name) (\(country.prefix))"
 
         cell.textLabel?.font = font ?? .preferredFont(forTextStyle: .callout)
         cell.detailTextLabel?.font = font ?? .preferredFont(forTextStyle: .body)

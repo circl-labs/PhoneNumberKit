@@ -84,7 +84,15 @@ public class CountryCodePickerViewController: UITableViewController {
     {
         self.phoneNumberKit = phoneNumberKit
         self.commonCountryCodes = commonCountryCodes
-        super.init(style: .grouped)
+        if #available(iOS 13.0, *) {
+            super.init(style: .insetGrouped)
+            self.view.backgroundColor = UIColor(red: 246/255,
+                                                green: 246/255,
+                                                blue: 246/255,
+                                                alpha: 1)
+        } else {
+            super.init(style: .grouped)
+        }
         self.commonInit()
     }
 
